@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Misery Spell</title>
+<meta name="description" content="Misery Spell. Atmospheric black metal from Saint Petersburg. New album Wormhole out 16 October 2026 on Naturmacht Productions.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="canonical" href="https://miseryspell.com/">
+<meta property="og:title" content="Misery Spell">
+<meta property="og:description" content="Atmospheric black metal from Saint Petersburg. New album Wormhole out 16.10.2026.">
+<meta property="og:image" content="https://miseryspell.com/assets/og.jpg">
+<meta property="og:url" content="https://miseryspell.com/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0e0e0e">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+:root{
+  --bg:#0e0e0e;
+  --bg2:#161616;
+  --line:#2a2a2a;
+  --fg:#e6e2da;
+  --muted:#8f8a80;
+  --accent:#c9b58a;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:Inter,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+/* hero */
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:url(assets/bg.jpg) center 62%/140% auto no-repeat;opacity:.38;filter:grayscale(1) contrast(1.1)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,14,14,.15) 0%,rgba(14,14,14,.55) 60%,var(--bg) 100%)}
+.hero .in{position:relative;z-index:1;padding:80px 20px 60px}
+.hero img{width:200px;height:200px;margin:0 auto 24px;filter:drop-shadow(0 0 24px rgba(0,0,0,.8))}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(40px,7vw,72px);letter-spacing:.14em;text-transform:uppercase;line-height:1}
+.hero p{margin-top:14px;color:var(--muted);letter-spacing:.22em;text-transform:uppercase;font-size:12px}
+.hero nav{margin-top:36px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.hero nav a:hover{color:var(--fg)}
+
+/* sections */
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2{font-family:var(--serif);font-weight:400;font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);margin-bottom:34px}
+
+/* release */
+.release{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.release img{width:100%;aspect-ratio:1;box-shadow:0 30px 60px rgba(0,0,0,.6)}
+.release .k{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.release h3{font-family:var(--serif);font-weight:600;font-size:clamp(36px,5vw,54px);line-height:1;letter-spacing:.02em}
+.release .sub{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--muted);margin-top:6px}
+.release .date{margin-top:22px;color:var(--fg);font-size:14px}
+.release .date span{color:var(--muted)}
+.release p.desc{margin-top:18px;color:var(--muted);font-size:14px;max-width:44ch}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:14px 22px;border:1px solid var(--fg);font-size:12px;letter-spacing:.18em;text-transform:uppercase;transition:.15s}
+.btn:hover{background:var(--fg);color:var(--bg)}
+.btn.ghost{border-color:var(--line);color:var(--muted)}
+.btn.ghost:hover{border-color:var(--fg);color:var(--fg);background:transparent}
+.tracks{margin-top:26px;font-size:13px;color:var(--muted);max-width:360px}
+.tracks li{list-style:none;padding:5px 0;border-bottom:1px solid var(--line);break-inside:avoid}
+.tracks li b{color:var(--fg);font-weight:500;margin-right:8px}
+
+/* listen */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.tile{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border:1px solid var(--line);background:var(--bg2);transition:.15s}
+.tile:hover{border-color:var(--fg)}
+.tile span{font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.tile small{color:var(--muted);font-size:11px;letter-spacing:.1em}
+
+/* discography */
+.disco{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px}
+.alb img{width:100%;aspect-ratio:1;transition:.2s;filter:saturate(.85)}
+.alb:hover img{filter:saturate(1);transform:translateY(-3px)}
+.alb .t{margin-top:14px;font-family:var(--serif);font-size:24px;font-weight:600;line-height:1.1}
+.alb .m{color:var(--muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-top:4px}
+
+/* merch + social */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.list a{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+.list a:hover span:first-child{color:var(--accent)}
+.list span:last-child{color:var(--muted);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+
+footer{padding:48px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;text-align:center;letter-spacing:.06em}
+footer a:hover{color:var(--fg)}
+
+@media (max-width:720px){
+  .release,.two{grid-template-columns:1fr;gap:32px}
+  .tracks{columns:1}
+  section{padding:56px 0}
+  .hero{min-height:80vh}
+  .hero img{width:150px;height:150px}
+  .hero::before{background-size:cover;background-position:center 70%}
+  .disco{grid-template-columns:1fr 1fr;gap:16px}
+  .alb .t{font-size:19px}
+  .alb .m{font-size:10px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="in">
+    <img src="assets/logo.png" alt="Misery Spell" width="200" height="200">
+    <h1>Misery Spell</h1>
+    <p>Atmospheric black metal<br>Saint Petersburg</p>
+    <nav>
+      <a href="#wormhole">Wormhole</a>
+      <a href="#listen">Listen</a>
+      <a href="#discography">Discography</a>
+      <a href="#merch">Merch</a>
+      <a href="#contact">Follow</a>
+    </nav>
+  </div>
+</header>
+
+<section id="wormhole">
+  <div class="wrap release">
+    <a href="https://miseryspell.bandcamp.com/album/wormhole"><img src="assets/wormhole-1200.jpg" alt="Wormhole album cover" loading="eager"></a>
+    <div>
+      <div class="k">New album</div>
+      <h3>Wormhole</h3>
+      <div class="sub">Червоточина</div>
+      <div class="date">16 October 2026 <span>via Naturmacht Productions</span></div>
+      <p class="desc">A feeling that haunts throughout life and slowly eats away all light from the inside. A hidden flaw that is not visible at first, but destroys from within.</p>
+      <div class="btns">
+        <a class="btn" href="https://ffm.to/3245d73320120ef5d3f5397d4ba39a77081ee7dfb680be1d">Pre-save</a>
+        <a class="btn" href="https://shop.naturmacht.com/miseryspellmerch">Pre-order CD</a>
+        <a class="btn ghost" href="https://miseryspell.bandcamp.com/album/wormhole">Bandcamp</a>
+      </div>
+      <ul class="tracks">
+        <li><b>1</b> Under the Pale Light of the Stars</li>
+        <li><b>2</b> Nest of Sorrow</li>
+        <li><b>3</b> Wormhole</li>
+        <li><b>4</b> Bitter Dream</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="listen">
+  <div class="wrap">
+    <h2>Listen</h2>
+    <div class="grid">
+      <a class="tile" href="https://miseryspell.bandcamp.com"><span>Bandcamp</span><small>buy</small></a>
+      <a class="tile" href="https://open.spotify.com/artist/3N6UxLvwoanu03YzcaQdST"><span>Spotify</span><small>stream</small></a>
+      <a class="tile" href="https://music.apple.com/artist/misery-spell/1526748584"><span>Apple Music</span><small>stream</small></a>
+      <a class="tile" href="https://www.deezer.com/en/artist/103364212"><span>Deezer</span><small>stream</small></a>
+    </div>
+  </div>
+</section>
+
+<section id="discography">
+  <div class="wrap">
+    <h2>Discography</h2>
+    <div class="disco">
+      <a class="alb" href="https://miseryspell.bandcamp.com/album/wormhole">
+        <img src="assets/wormhole-600.jpg" alt="Wormhole" loading="lazy">
+        <div class="t">Wormhole</div><div class="m">2026, full-length</div>
+      </a>
+      <a class="alb" href="https://miseryspell.bandcamp.com/album/--5">
+        <img src="assets/absolyutnaya-tma-600.jpg" alt="Абсолютная тьма" loading="lazy">
+        <div class="t">Абсолютная тьма</div><div class="m">2023, full-length</div>
+      </a>
+      <a class="alb" href="https://miseryspell.bandcamp.com/album/--4">
+        <img src="assets/posle-zhizni-600.jpg" alt="После жизни" loading="lazy">
+        <div class="t">После жизни</div><div class="m">2022, full-length</div>
+      </a>
+      <a class="alb" href="https://miseryspell.bandcamp.com/album/--3">
+        <img src="assets/vedmin-krug-600.jpg" alt="Ведьмин круг" loading="lazy">
+        <div class="t">Ведьмин круг</div><div class="m">2021, EP</div>
+      </a>
+      <a class="alb" href="https://miseryspell.bandcamp.com/album/--2">
+        <img src="assets/zakatny-chas-600.jpg" alt="Закатный час" loading="lazy">
+        <div class="t">Закатный час</div><div class="m">2020, EP</div>
+      </a>
+      <a class="alb" href="https://miseryspell.bandcamp.com/album/-">
+        <img src="assets/v-sumerkah-oseni-600.jpg" alt="В сумерках осени" loading="lazy">
+        <div class="t">В сумерках осени</div><div class="m">2019, EP</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="merch">
+  <div class="wrap two">
+    <div>
+      <h2>Merch</h2>
+      <div class="list">
+        <a href="https://shop.naturmacht.com/miseryspellmerch"><span>Naturmacht Productions</span><span>worldwide</span></a>
+        <a href="https://vk.com/miseryspell"><span>VK store</span><span>CD, tape, patch</span></a>
+        <a href="https://miseryspell.bandcamp.com/merch"><span>Bandcamp</span><span>digital, merch</span></a>
+      </div>
+    </div>
+    <div id="contact">
+      <h2>Follow</h2>
+      <div class="list">
+        <a href="https://vk.com/miseryspell"><span>VK</span><span>vk.com/miseryspell</span></a>
+        <a href="https://www.instagram.com/misery_spell/"><span>Instagram</span><span>@misery_spell</span></a>
+        <a href="https://miseryspell.bandcamp.com"><span>Bandcamp</span><span>miseryspell.bandcamp.com</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Misery Spell, Saint Petersburg
+  </div>
+</footer>
+
+</body>
+</html>
