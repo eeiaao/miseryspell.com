@@ -26,7 +26,7 @@
   --sans:Inter,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;background:var(--bg)}
 body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
@@ -56,14 +56,9 @@ h2{font-family:var(--serif);font-weight:400;font-size:13px;letter-spacing:.32em;
 .release .date{margin-top:22px;color:var(--fg);font-size:14px}
 .release .date span{color:var(--muted)}
 .release p.desc{margin-top:18px;color:var(--muted);font-size:14px;max-width:44ch}
-.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.btn{display:inline-block;padding:14px 22px;border:1px solid var(--fg);font-size:12px;letter-spacing:.18em;text-transform:uppercase;transition:.15s}
+.btns{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px;max-width:440px}
+.btn{display:block;text-align:center;padding:14px 10px;border:1px solid var(--fg);font-size:12px;letter-spacing:.18em;text-transform:uppercase;transition:.15s}
 .btn:hover{background:var(--fg);color:var(--bg)}
-.btn.ghost{border-color:var(--line);color:var(--muted)}
-.btn.ghost:hover{border-color:var(--fg);color:var(--fg);background:transparent}
-.tracks{margin-top:26px;font-size:13px;color:var(--muted);max-width:360px}
-.tracks li{list-style:none;padding:5px 0;border-bottom:1px solid var(--line);break-inside:avoid}
-.tracks li b{color:var(--fg);font-weight:500;margin-right:8px}
 
 /* listen */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
@@ -80,17 +75,18 @@ h2{font-family:var(--serif);font-weight:400;font-size:13px;letter-spacing:.32em;
 .alb .m{color:var(--muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-top:4px}
 
 /* merch + social */
-.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.two{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px}
 .list a{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
 .list a:hover span:first-child{color:var(--accent)}
-.list span:last-child{color:var(--muted);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.list span:last-child{color:var(--muted);font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-align:right;margin-left:12px}
 
 footer{padding:48px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;text-align:center;letter-spacing:.06em}
 footer a:hover{color:var(--fg)}
 
+@media (max-width:900px){.two{grid-template-columns:1fr 1fr}}
 @media (max-width:720px){
   .release,.two{grid-template-columns:1fr;gap:32px}
-  .tracks{columns:1}
+  .btns{grid-template-columns:1fr;max-width:none}
   section{padding:56px 0}
   .hero{min-height:80vh}
   .hero img{width:150px;height:150px}
@@ -130,14 +126,8 @@ footer a:hover{color:var(--fg)}
       <div class="btns">
         <a class="btn" href="https://ffm.to/3245d73320120ef5d3f5397d4ba39a77081ee7dfb680be1d">Pre-save</a>
         <a class="btn" href="https://shop.naturmacht.com/miseryspellmerch">Pre-order CD</a>
-        <a class="btn ghost" href="https://miseryspell.bandcamp.com/album/wormhole">Bandcamp</a>
+        <a class="btn" href="https://miseryspell.bandcamp.com/album/wormhole">Bandcamp</a>
       </div>
-      <ul class="tracks">
-        <li><b>1</b> Under the Pale Light of the Stars</li>
-        <li><b>2</b> Nest of Sorrow</li>
-        <li><b>3</b> Wormhole</li>
-        <li><b>4</b> Bitter Dream</li>
-      </ul>
     </div>
   </div>
 </section>
@@ -146,7 +136,7 @@ footer a:hover{color:var(--fg)}
   <div class="wrap">
     <h2>Listen</h2>
     <div class="grid">
-      <a class="tile" href="https://miseryspell.bandcamp.com"><span>Bandcamp</span><small>buy</small></a>
+      <a class="tile" href="https://miseryspell.bandcamp.com"><span>Bandcamp</span><small>stream, buy</small></a>
       <a class="tile" href="https://open.spotify.com/artist/3N6UxLvwoanu03YzcaQdST"><span>Spotify</span><small>stream</small></a>
       <a class="tile" href="https://music.apple.com/artist/misery-spell/1526748584"><span>Apple Music</span><small>stream</small></a>
       <a class="tile" href="https://www.deezer.com/en/artist/103364212"><span>Deezer</span><small>stream</small></a>
@@ -192,16 +182,24 @@ footer a:hover{color:var(--fg)}
       <h2>Merch</h2>
       <div class="list">
         <a href="https://shop.naturmacht.com/miseryspellmerch"><span>Naturmacht Productions</span><span>worldwide</span></a>
-        <a href="https://vk.com/miseryspell"><span>VK store</span><span>CD, tape, patch</span></a>
         <a href="https://miseryspell.bandcamp.com/merch"><span>Bandcamp</span><span>digital, merch</span></a>
+        <a href="https://vk.com/miseryspell"><span>VK store</span><span>CD, tape, patch</span></a>
       </div>
     </div>
     <div id="contact">
       <h2>Follow</h2>
       <div class="list">
-        <a href="https://vk.com/miseryspell"><span>VK</span><span>vk.com/miseryspell</span></a>
         <a href="https://www.instagram.com/misery_spell/"><span>Instagram</span><span>@misery_spell</span></a>
-        <a href="https://miseryspell.bandcamp.com"><span>Bandcamp</span><span>miseryspell.bandcamp.com</span></a>
+        <a href="https://miseryspell.bandcamp.com"><span>Bandcamp</span><span>page</span></a>
+        <a href="https://vk.com/miseryspell"><span>VK</span><span>community</span></a>
+      </div>
+    </div>
+    <div>
+      <h2>Elsewhere</h2>
+      <div class="list">
+        <a href="https://naturmacht.com/misery-spell/"><span>Naturmacht Productions</span><span>label</span></a>
+        <a href="https://www.metal-archives.com/bands/Misery_Spell/3540460902"><span>Metal Archives</span><span>encyclopaedia</span></a>
+        <a href="https://www.discogs.com/artist/7722808-Misery-Spell"><span>Discogs</span><span>releases</span></a>
       </div>
     </div>
   </div>
